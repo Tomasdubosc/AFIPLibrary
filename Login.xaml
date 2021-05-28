@@ -95,7 +95,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element" FoundElement="[cuitCuilElement]" sap:VirtualizedContainerService.HintSize="772,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
+            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Campo CUIT/CUIL" FoundElement="[cuitCuilElement]" sap:VirtualizedContainerService.HintSize="772,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="85b0a36d-86f8-44b2-b1f0-700be838c445" Selector="&lt;webctrl tag='INPUT' type='number' /&gt;">
                   <ui:Target.TimeoutMS>
