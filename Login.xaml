@@ -79,7 +79,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="889,2302" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -94,7 +93,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="813,1933" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="813,1934" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="usuarioIncorrecto" />
               <Variable x:TypeArguments="ui:UiElement" Name="cuitCuilElement" />
@@ -140,13 +139,10 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="065fc905-b79d-4cc3-a1c8-60db4fff4dba" InformativeScreenshot="1be922810b70be6ba240ed4889a7820d" Selector="&lt;webctrl tag='INPUT' type='submit' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="065fc905-b79d-4cc3-a1c8-60db4fff4dba" InformativeScreenshot="1be922810b70be6ba240ed4889a7820d" Selector="&lt;webctrl tag='INPUT' type='submit' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
@@ -159,7 +155,7 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[usuarioIncorrecto]" sap:VirtualizedContainerService.HintSize="771,1267" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[usuarioIncorrecto]" sap:VirtualizedContainerService.HintSize="771,1268" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Throw DisplayName="Throw Username Exception" Exception="[new BusinessRuleException(&quot;Login: Usuario incorrecto para el cuit &quot; + in_username )]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Then>
@@ -226,13 +222,10 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c99f9d31-6ce3-4b4a-af9a-148229286d08" InformativeScreenshot="b1d0f41593aaff27bc1c76cef9261da9" Selector="&lt;webctrl tag='INPUT' type='submit' aaname='INGRESAR' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c99f9d31-6ce3-4b4a-af9a-148229286d08" InformativeScreenshot="b1d0f41593aaff27bc1c76cef9261da9" Selector="&lt;webctrl tag='INPUT' type='submit' aaname='INGRESAR' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
