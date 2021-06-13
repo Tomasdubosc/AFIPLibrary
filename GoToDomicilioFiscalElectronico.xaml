@@ -1,0 +1,334 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GoToDomicilioFiscalElectronico" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1774,2746" sap2010:WorkflowViewState.IdRef="GoToDomicilioFiscalElectronico_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="27">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GoToDomicilioFiscalElectronico" sap:VirtualizedContainerService.HintSize="1784,2681" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="version1" />
+      <Variable x:TypeArguments="x:Boolean" Name="version2" />
+      <Variable x:TypeArguments="x:Boolean" Name="version3" />
+      <Variable x:TypeArguments="x:Int32" Name="version" />
+      <Variable x:TypeArguments="x:Boolean" Name="alreadyOnDFE" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Verify AFIP Version" sap:VirtualizedContainerService.HintSize="1742,2235" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:UiElementExists DisplayName="Element Exists - 'H4' - isVersion1?" Exists="[version1]" sap:VirtualizedContainerService.HintSize="1700,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="53ac6052-3221-496e-bf0e-98c780172c06" InformativeScreenshot="96db3bd8e061d69df43eb56958efc9bc" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl tag='H4' innertext='Domicilio Fiscal Electrónico' isleaf='1' /&gt;" TimeoutMS="2000">
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:UiElementExists.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:UiElementExists>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1700,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;isVersion1:&quot;+version1.ToString]" />
+      <If Condition="[version1=False]" DisplayName="If - is not Version1" sap:VirtualizedContainerService.HintSize="1700,1864" sap2010:WorkflowViewState.IdRef="If_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Sequence is version2?" sap:VirtualizedContainerService.HintSize="1393,1704" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists - 'P' - isVersion2?" Exists="[version2]" sap:VirtualizedContainerService.HintSize="1351,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e517732-f13b-4708-8c70-b9bf0553127c" InformativeScreenshot="b533ad4b9609e342bd9cd69b2202ce54" Selector="&lt;html app='chrome.exe' title='Clave FIscal | AFIP - Administración Federal de Ingresos Publicos' /&gt;&lt;webctrl aaname='Domicilio Fiscal Electrónico*' tag='P' /&gt;" TimeoutMS="2000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1351,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;isVersion2:&quot;+version2.ToString]" />
+            <If Condition="[version2=False]" DisplayName="If - Is not Version2" sap:VirtualizedContainerService.HintSize="1351,1333" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Sequence -  is version 3?" sap:VirtualizedContainerService.HintSize="1044,1173" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists - 'H3' - isVersion3?" Exists="[version3]" sap:VirtualizedContainerService.HintSize="1002,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2723205d-e784-4b8f-8a71-8531598846bd" InformativeScreenshot="bfc57b1b9700612e2a12626c701d317c" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl isleaf='1' tag='H3' innertext='Domicilio Fiscal Electrónico' /&gt;" TimeoutMS="2000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1002,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;isVersion3:&quot;+version3.ToString]" />
+                  <If Condition="[version3=False]" DisplayName="If - Is not Version3" sap:VirtualizedContainerService.HintSize="1002,802" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence DisplayName="Sequence is Not Version 3" sap:VirtualizedContainerService.HintSize="695,642" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Already on DFE?" sap:VirtualizedContainerService.HintSize="653,550" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:UiElementExists DisplayName="Element Exists 'SPAN' - Domicilio Fiscal Electronico" Exists="[alreadyOnDFE]" sap:VirtualizedContainerService.HintSize="611,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                            <ui:UiElementExists.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17259d54-569f-469f-94f1-0722559edacf" InformativeScreenshot="776d0ec3619aca362d98e29205d10617" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;&lt;webctrl tag='SPAN' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:UiElementExists.Target>
+                          </ui:UiElementExists>
+                          <If Condition="[alreadyOnDFE=False]" DisplayName="If - Already on DFE?" sap:VirtualizedContainerService.HintSize="611,312" sap2010:WorkflowViewState.IdRef="If_4">
+                            <If.Then>
+                              <Assign DisplayName="Assign VersionNotFound" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[version]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Sequence AlreadyOnDFE" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Assign Case DFE already opened" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[version]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">4</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Assign DisplayName="Assign - Is Version 3" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[version]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">3</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Assign DisplayName="Assign - Is Version 2" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[version]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
+            </If>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Assign DisplayName="Assign - Is Version 1" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[version]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">1</InArgument>
+            </Assign.Value>
+          </Assign>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Switch x:TypeArguments="x:Int32" DisplayName="Go DFE in current AFIP version" Expression="[version]" sap:VirtualizedContainerService.HintSize="1742,314" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch.Default>
+        <Throw Exception="[new SystemException(&quot;AFIP. Go to DFE. Not found DFE Version on current page&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+      </Switch.Default>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence x:Key="1" sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'H4' - Domicilio Fiscal Electronico Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition Position="Center">
+              <ui:CursorPosition.OffsetX>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetX>
+              <ui:CursorPosition.OffsetY>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetY>
+            </ui:CursorPosition>
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="40df1615-dcd7-46ee-bd72-862defd94dc5" InformativeScreenshot="96db3bd8e061d69df43eb56958efc9bc" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl tag='H4' innertext='Domicilio Fiscal Electrónico' isleaf='1' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;DFE opened&quot;]" />
+      </Sequence>
+      <Sequence x:Key="2" sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'P' - Domicilio Fiscal Electronico Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition Position="Center">
+              <ui:CursorPosition.OffsetX>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetX>
+              <ui:CursorPosition.OffsetY>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetY>
+            </ui:CursorPosition>
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="24d1a1d5-4144-443b-8827-b275f7980679" InformativeScreenshot="b533ad4b9609e342bd9cd69b2202ce54" Selector="&lt;html app='chrome.exe' title='Clave FIscal | AFIP - Administración Federal de Ingresos Publicos' /&gt;&lt;webctrl aaname='Domicilio Fiscal Electrónico*' tag='P' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;DFE opened&quot;]" />
+      </Sequence>
+      <Sequence x:Key="3" sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'H3' - Domicilio Fiscal Electronico Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition Position="Center">
+              <ui:CursorPosition.OffsetX>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetX>
+              <ui:CursorPosition.OffsetY>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetY>
+            </ui:CursorPosition>
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aaa3f3fd-923e-4345-a9c5-060f2bb135f4" InformativeScreenshot="bfc57b1b9700612e2a12626c701d317c" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl isleaf='1' tag='H3' innertext='Domicilio Fiscal Electrónico' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;DFE opened&quot;]" />
+      </Sequence>
+      <ui:LogMessage x:Key="4" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Bot is already on DFE. Skip going to DFE again.&quot;]" />
+    </Switch>
+  </Sequence>
+</Activity>
