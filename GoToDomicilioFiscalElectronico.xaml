@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GoToDomicilioFiscalElectronico" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1774,2746" sap2010:WorkflowViewState.IdRef="GoToDomicilioFiscalElectronico_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GoToDomicilioFiscalElectronico" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,2732" sap2010:WorkflowViewState.IdRef="GoToDomicilioFiscalElectronico_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -53,7 +53,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GoToDomicilioFiscalElectronico" sap:VirtualizedContainerService.HintSize="1784,2681" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GoToDomicilioFiscalElectronico" sap:VirtualizedContainerService.HintSize="1784,2667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="version1" />
       <Variable x:TypeArguments="x:Boolean" Name="version2" />
@@ -67,7 +67,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Verify AFIP Version" sap:VirtualizedContainerService.HintSize="1742,2235" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Verify AFIP Version" sap:VirtualizedContainerService.HintSize="1742,2221" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -76,10 +76,10 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:UiElementExists DisplayName="Element Exists - 'H4' - isVersion1?" Exists="[version1]" sap:VirtualizedContainerService.HintSize="1700,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="53ac6052-3221-496e-bf0e-98c780172c06" InformativeScreenshot="96db3bd8e061d69df43eb56958efc9bc" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl tag='H4' innertext='Domicilio Fiscal Electrónico' isleaf='1' /&gt;" TimeoutMS="2000">
-            <ui:Target.WaitForReady>
-              <InArgument x:TypeArguments="ui:WaitForReady" />
-            </ui:Target.WaitForReady>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="53ac6052-3221-496e-bf0e-98c780172c06" InformativeScreenshot="96db3bd8e061d69df43eb56958efc9bc" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl tag='H4' innertext='Domicilio Fiscal Electrónico' isleaf='1' /&gt;" WaitForReady="COMPLETE">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
           </ui:Target>
         </ui:UiElementExists.Target>
         <sap:WorkflowViewStateService.ViewState>
@@ -89,8 +89,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:UiElementExists>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1700,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;isVersion1:&quot;+version1.ToString]" />
-      <If Condition="[version1=False]" DisplayName="If - is not Version1" sap:VirtualizedContainerService.HintSize="1700,1864" sap2010:WorkflowViewState.IdRef="If_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1700,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;isVersion1:&quot;+version1.ToString]" />
+      <If Condition="[version1=False]" DisplayName="If - is not Version1" sap:VirtualizedContainerService.HintSize="1700,1852" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -98,7 +98,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Sequence is version2?" sap:VirtualizedContainerService.HintSize="1393,1704" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Sequence is version2?" sap:VirtualizedContainerService.HintSize="1393,1694" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -106,17 +106,17 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:UiElementExists DisplayName="Element Exists - 'P' - isVersion2?" Exists="[version2]" sap:VirtualizedContainerService.HintSize="1351,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e517732-f13b-4708-8c70-b9bf0553127c" InformativeScreenshot="b533ad4b9609e342bd9cd69b2202ce54" Selector="&lt;html app='chrome.exe' title='Clave FIscal | AFIP - Administración Federal de Ingresos Publicos' /&gt;&lt;webctrl aaname='Domicilio Fiscal Electrónico*' tag='P' /&gt;" TimeoutMS="2000">
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e517732-f13b-4708-8c70-b9bf0553127c" InformativeScreenshot="b533ad4b9609e342bd9cd69b2202ce54" Selector="&lt;html app='chrome.exe' title='Clave FIscal | AFIP - Administración Federal de Ingresos Publicos' /&gt;&lt;webctrl aaname='Domicilio Fiscal Electrónico*' tag='P' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1351,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;isVersion2:&quot;+version2.ToString]" />
-            <If Condition="[version2=False]" DisplayName="If - Is not Version2" sap:VirtualizedContainerService.HintSize="1351,1333" sap2010:WorkflowViewState.IdRef="If_2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1351,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;isVersion2:&quot;+version2.ToString]" />
+            <If Condition="[version2=False]" DisplayName="If - Is not Version2" sap:VirtualizedContainerService.HintSize="1351,1325" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Sequence -  is version 3?" sap:VirtualizedContainerService.HintSize="1044,1173" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence -  is version 3?" sap:VirtualizedContainerService.HintSize="1044,1167" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,23 +124,23 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:UiElementExists DisplayName="Element Exists - 'H3' - isVersion3?" Exists="[version3]" sap:VirtualizedContainerService.HintSize="1002,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2723205d-e784-4b8f-8a71-8531598846bd" InformativeScreenshot="bfc57b1b9700612e2a12626c701d317c" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl isleaf='1' tag='H3' innertext='Domicilio Fiscal Electrónico' /&gt;" TimeoutMS="2000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2723205d-e784-4b8f-8a71-8531598846bd" InformativeScreenshot="bfc57b1b9700612e2a12626c701d317c" Selector="&lt;html app='chrome.exe' title='Mi Portal - Clave Fiscal' /&gt;&lt;webctrl isleaf='1' tag='H3' innertext='Domicilio Fiscal Electrónico' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1002,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;isVersion3:&quot;+version3.ToString]" />
-                  <If Condition="[version3=False]" DisplayName="If - Is not Version3" sap:VirtualizedContainerService.HintSize="1002,802" sap2010:WorkflowViewState.IdRef="If_3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1002,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;isVersion3:&quot;+version3.ToString]" />
+                  <If Condition="[version3=False]" DisplayName="If - Is not Version3" sap:VirtualizedContainerService.HintSize="1002,798" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <Sequence DisplayName="Sequence is Not Version 3" sap:VirtualizedContainerService.HintSize="695,642" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Sequence is Not Version 3" sap:VirtualizedContainerService.HintSize="695,640" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Already on DFE?" sap:VirtualizedContainerService.HintSize="653,550" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Already on DFE?" sap:VirtualizedContainerService.HintSize="653,548" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -148,17 +148,14 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:UiElementExists DisplayName="Element Exists 'SPAN' - Domicilio Fiscal Electronico" Exists="[alreadyOnDFE]" sap:VirtualizedContainerService.HintSize="611,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                             <ui:UiElementExists.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17259d54-569f-469f-94f1-0722559edacf" InformativeScreenshot="776d0ec3619aca362d98e29205d10617" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;&lt;webctrl tag='SPAN' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17259d54-569f-469f-94f1-0722559edacf" InformativeScreenshot="776d0ec3619aca362d98e29205d10617" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;&lt;webctrl tag='SPAN' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:UiElementExists.Target>
                           </ui:UiElementExists>
-                          <If Condition="[alreadyOnDFE=False]" DisplayName="If - Already on DFE?" sap:VirtualizedContainerService.HintSize="611,312" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If Condition="[alreadyOnDFE=False]" DisplayName="If - Already on DFE?" sap:VirtualizedContainerService.HintSize="611,310" sap2010:WorkflowViewState.IdRef="If_4">
                             <If.Then>
                               <Assign DisplayName="Assign VersionNotFound" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                 <Assign.To>
