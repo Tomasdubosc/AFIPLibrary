@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,780</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,680</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Launch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,13 +90,10 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Botón Ingresar" FoundElement="[buttonIngresarElement]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                 <ui:WaitUiElementAppear.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8269589e-ce3c-4129-8fc6-ee622f64fc41" Selector="&lt;webctrl parentid='contentCF' tag='SPAN' innertext='Ingresar' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8269589e-ce3c-4129-8fc6-ee622f64fc41" Selector="&lt;webctrl parentid='contentCF' tag='SPAN' innertext='Ingresar' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
-                    <ui:Target.WaitForReady>
-                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                    </ui:Target.WaitForReady>
                   </ui:Target>
                 </ui:WaitUiElementAppear.Target>
               </ui:WaitUiElementAppear>
