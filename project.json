@@ -4,9 +4,6 @@
   "main": "NewActivity.xaml",
   "dependencies": {
     "Microsoft.Activities": "1.0.1",
-    "Microsoft.CodeAnalysis.Common": "[3.7.0]",
-    "Microsoft.CodeAnalysis.CSharp": "[3.7.0]",
-    "Microsoft.CodeAnalysis.VisualBasic": "[3.7.0]",
     "UiPath.Excel.Activities": "2.10.4",
     "UiPath.Mail.Activities": "1.10.4",
     "UiPath.System.Activities": "21.4.0",
@@ -28,7 +25,8 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
   },
   "designOptions": {
     "projectProfile": "Developement",
