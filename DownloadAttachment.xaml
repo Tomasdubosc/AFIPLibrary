@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="DownloadNotification" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_downloadFolder" Type="InArgument(x:String)" />
-    <x:Property Name="out_attachmentPath" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Path de la carpeta donde se descargarán los archivos de las notificaciones" Name="in_downloadFolder" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Path del archivo descargado." Name="out_attachmentPath" Type="OutArgument(x:String)" />
   </x:Members>
   <this:DownloadNotification.in_downloadFolder>
     <InArgument x:TypeArguments="x:String">
@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1534</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>871,1605</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadNotification_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -75,19 +75,20 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadNotification" sap:VirtualizedContainerService.HintSize="687,1369" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Descarga el archivo adjunto de la notificación actual." DisplayName="DownloadNotification" sap:VirtualizedContainerService.HintSize="687,1440" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  VE-Lector'" sap:VirtualizedContainerService.HintSize="645,1146" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="119454a4aebebc8df91cf38444d8814b" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  VE-Lector'" sap:VirtualizedContainerService.HintSize="645,1186" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="119454a4aebebc8df91cf38444d8814b" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="611,1000" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="611,1040" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="attachmentName" />
               <Variable x:TypeArguments="si:FileInfo" Name="attachmentFile" />
@@ -116,7 +117,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:GetLastDownloadedFile DisplayName="Wait for Download" DownloadFolder="[in_downloadFolder]" File="[attachmentFile]" sap:VirtualizedContainerService.HintSize="569,405" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_3" Timeout="20">
+            <ui:GetLastDownloadedFile DisplayName="Wait for Download" DownloadFolder="[in_downloadFolder]" File="[attachmentFile]" sap:VirtualizedContainerService.HintSize="569,445" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_3" Timeout="20">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
                   <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
