@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,2634</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>957,2929</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -70,20 +70,23 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Ingresa al sistema AFIP con las credenciales recibidas por parámetro." sap:VirtualizedContainerService.HintSize="967,2569" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Ingresa al sistema AFIP con las credenciales recibidas por parámetro." sap:VirtualizedContainerService.HintSize="967,2864" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="cambiarclave" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser AFIP" sap:VirtualizedContainerService.HintSize="925,2313" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="cdd1e081351bf1f2a2a943c35b66a435" Selector="&lt;html app='chrome.exe' title='*AFIP*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser AFIP" sap:VirtualizedContainerService.HintSize="925,2306" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="cdd1e081351bf1f2a2a943c35b66a435" Selector="&lt;html app='chrome.exe' title='*AFIP*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="891,2127" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="891,2120" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="usuarioIncorrecto" />
               <Variable x:TypeArguments="ui:UiElement" Name="cuitCuilElement" />
@@ -145,12 +148,12 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[usuarioIncorrecto]" sap:VirtualizedContainerService.HintSize="849,1461" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[usuarioIncorrecto]" sap:VirtualizedContainerService.HintSize="849,1454" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Throw DisplayName="Throw Username Exception" Exception="[new BusinessRuleException(&quot;Login: Usuario incorrecto para el cuit &quot; + in_username )]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="604,1302" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence sap:VirtualizedContainerService.HintSize="604,1297" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="claveOCaptchaIncorrecto" />
                   </Sequence.Variables>
@@ -205,9 +208,9 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[claveoCaptchaIncorrecto]" sap:VirtualizedContainerService.HintSize="562,772" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[claveoCaptchaIncorrecto]" sap:VirtualizedContainerService.HintSize="562,767" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="526,593" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="526,591" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="ui:UiElement" Name="errorMessageElement" />
                           <Variable x:TypeArguments="x:String" Name="errorMessage" />
@@ -244,7 +247,7 @@
                             </ui:Target>
                           </ui:GetAttribute.Target>
                         </ui:GetAttribute>
-                        <If Condition="[errorMessage.ToLower.Contains(&quot;usuario&quot;)]" sap:VirtualizedContainerService.HintSize="484,219" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[errorMessage.ToLower.Contains(&quot;usuario&quot;)]" sap:VirtualizedContainerService.HintSize="484,217" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Then>
                             <Throw DisplayName="Throw Password Exception" Exception="[new BusinessRuleException(&quot;Login: Clave incorrecta para el cuit &quot; + in_username )]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                           </If.Then>
@@ -262,6 +265,22 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="925,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Login Successful&quot;]" />
+    <ui:UiElementExists DisplayName="Element Exists 'H4' - elemento Cambiar Clave Fiscal" Exists="[cambiarclave]" sap:VirtualizedContainerService.HintSize="925,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+      <ui:UiElementExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dacb0204-3532-4c46-8b69-f9617ea92514" InformativeScreenshot="b46be92be4619038060dae6655ee3c53" Selector="&lt;html app='chrome.exe' title='*AFIP*' /&gt;&lt;webctrl tag='H4' innertext='Cambiar*Clave Fiscal' /&gt;" TimeoutMS="5000">
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:UiElementExists.Target>
+    </ui:UiElementExists>
+    <If Condition="[cambiarclave]" DisplayName="If - need to change Clave Fiscal" sap:VirtualizedContainerService.HintSize="925,249" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <Throw DisplayName="Throw ClaveFiscalException" Exception="[new BusinessRuleException(&quot;Login: Se necesita cambiar la clave fiscal manualmente para el cuit: &quot; + in_username )]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+      </If.Then>
+      <If.Else>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Login Successful&quot;]" />
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
