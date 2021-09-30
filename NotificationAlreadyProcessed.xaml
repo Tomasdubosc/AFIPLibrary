@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ValidateNotificationDate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ValidateNotificationDate" this:ValidateNotificationDate.searchedDate="[DateTime.ParseExact(&quot;30/04/2021&quot;, &quot;dd/MM/yyyy&quot;, System.Globalization.CultureInfo.InvariantCulture)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="searchedDate" Type="InArgument(s:DateTime)" />
     <x:Property Name="notificationAlreadyProcessed" Type="OutArgument(x:Boolean)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1038.4,2941.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1038.4,3176</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ValidateNotificationDate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -42,7 +42,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,15 +64,20 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NotificationAlreadyProcessed" sap:VirtualizedContainerService.HintSize="1033.6,2876.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NotificationAlreadyProcessed" sap:VirtualizedContainerService.HintSize="1033.6,3111.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="eventFound">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" Value="True" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="eventFound" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="historicEventsChilds" />
       <Variable x:TypeArguments="x:String" Name="eventRow" />
       <Variable x:TypeArguments="s:String[]" Name="eventRowColumns" />
@@ -84,13 +89,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  VE-Lector'" sap:VirtualizedContainerService.HintSize="992,2784" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="119454a4aebebc8df91cf38444d8814b" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  VE-Lector'" sap:VirtualizedContainerService.HintSize="992,3018.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="119454a4aebebc8df91cf38444d8814b" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="958.4,2596.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="958.4,2871.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,7 +179,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[not eventFound]" sap:VirtualizedContainerService.HintSize="916.8,1244" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[not eventFound]" sap:VirtualizedContainerService.HintSize="916.8,1518.4" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
                 <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
@@ -186,7 +191,11 @@
                 </Assign>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="610.4,1084.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap:VirtualizedContainerService.HintSize="610.4,1359.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="eventDateTimeString" />
+                    <Variable x:TypeArguments="s:String[]" Name="eventDateTimeStringSplitted" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,12 +203,21 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="568.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[eventRow]" />
                   <p:SplitString DisplayName="Split string - Event Row into Columns" sap:VirtualizedContainerService.HintSize="568.8,134.4" sap2010:WorkflowViewState.IdRef="SplitString_1" Input="[eventRow]" Result="[eventRowColumns]" Separator=" ()" StringSplitOptions="None" />
+                  <Assign sap:VirtualizedContainerService.HintSize="568.8,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[eventDateTimeString]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[eventRowColumns(0)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <p:SplitString DisplayName="Split string - Event DateTime into Date" sap:VirtualizedContainerService.HintSize="568.8,134.4" sap2010:WorkflowViewState.IdRef="SplitString_2" Input="[eventDateTimeString]" Result="[eventDateTimeStringSplitted]" Separator=" " StringSplitOptions="None" />
                   <Assign sap:VirtualizedContainerService.HintSize="568.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[eventDateString]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[eventRowColumns(0)]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[eventDateTimeStringSplitted(0)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="568.8,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -207,7 +225,7 @@
                       <OutArgument x:TypeArguments="s:DateTime">[eventDate]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(eventDateString, "dd/MM/yyyy hh:mm:ss", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                      <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(eventDateString, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="568.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[eventDate]" />
