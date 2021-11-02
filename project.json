@@ -1,6 +1,6 @@
 {
   "name": "AFIPLibrary",
-  "description": "Blank Library",
+  "description": "Libreria para interactuar con AFIP",
   "main": "NewActivity.xaml",
   "dependencies": {
     "Microsoft.Activities": "1.0.1",
@@ -13,10 +13,11 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.4.3.0",
-  "projectVersion": "1.0.17",
+  "projectVersion": "1.0.24",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
+    "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
     "excludedLoggedData": [
@@ -25,7 +26,8 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
   },
   "designOptions": {
     "projectProfile": "Developement",
