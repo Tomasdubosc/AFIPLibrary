@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>871,1240</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>771.2,1220</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CountNotifications_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -68,22 +68,23 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Cuenta las notificaciones visibles en pantalla." DisplayName="CountNotifications" sap:VirtualizedContainerService.HintSize="602,1075" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Cuenta las notificaciones visibles en pantalla." DisplayName="CountNotifications" sap:VirtualizedContainerService.HintSize="641.6,1155.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'VE-Lector'" sap:VirtualizedContainerService.HintSize="560,952" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="16002623db3ae628f2191954fe6eb9eb" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'DFE'" sap:VirtualizedContainerService.HintSize="579.2,1012" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="16002623db3ae628f2191954fe6eb9eb" Selector="&lt;html app='chrome.exe' title='Domicilio Fiscal Electrónico' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,806" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="545.6,864.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="notificationsChilds" />
             </Sequence.Variables>
@@ -92,9 +93,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FindChildren Children="[notificationsChilds]" DisplayName="Find Children Notifications" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+            <ui:FindChildren Children="[notificationsChilds]" DisplayName="Find Children Notifications" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ee1595c-0ac3-492b-8e75-5a7b30d735db" InformativeScreenshot="80c23c208897df20e97cf13b0daa5a24" Selector="&lt;webctrl aria-role='rowgroup' parentid='*body-grid-container' tag='DIV' idx='2' /&gt;&lt;webctrl parentid='*body-grid-container' tag='DIV' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ee1595c-0ac3-492b-8e75-5a7b30d735db" InformativeScreenshot="80c23c208897df20e97cf13b0daa5a24" Selector="&lt;webctrl tag='tbody' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -104,7 +105,7 @@
                 </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="483.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[out_notifications]</OutArgument>
               </Assign.To>
@@ -112,13 +113,13 @@
                 <InArgument x:TypeArguments="x:Int32">[notificationsChilds.Count()]</InArgument>
               </Assign.Value>
             </Assign>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Número de notificaciones: &quot; &amp; out_notifications]" />
-            <If Condition="[out_notifications=0]" sap:VirtualizedContainerService.HintSize="484,236" sap2010:WorkflowViewState.IdRef="If_1">
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="483.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Número de notificaciones: &quot; &amp; out_notifications]" />
+            <If Condition="[out_notifications=0]" sap:VirtualizedContainerService.HintSize="483.2,248.8" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Throw Exception="[new BusinessRuleException(&quot;Count Notifications: No se visualizan notificaciones para los filtros aplicados.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                <Throw Exception="[new BusinessRuleException(&quot;Count Notifications: No se visualizan notificaciones para los filtros aplicados.&quot;)]" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Then>
             </If>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Count Notifications: &quot; + out_notifications.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Count Notifications: &quot; + out_notifications.ToString]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

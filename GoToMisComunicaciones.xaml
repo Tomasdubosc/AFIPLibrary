@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GoToMisComunicaciones" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="871,1290" sap2010:WorkflowViewState.IdRef="GoToMisComunicaciones_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GoToMisComunicaciones" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="767.2,938.4" sap2010:WorkflowViewState.IdRef="GoToMisComunicaciones_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -52,7 +52,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Accede a la solapa &quot;Mis Comunicaciones&quot; dentro de Domicilio Fiscal Electrónico" DisplayName="GoToMisComunicaciones" sap:VirtualizedContainerService.HintSize="476,1125" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Accede a la solapa &quot;Mis Comunicaciones&quot; dentro de Domicilio Fiscal Electrónico" DisplayName="GoToMisComunicaciones" sap:VirtualizedContainerService.HintSize="545.6,873.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="misComunicacionesButton" />
       <Variable x:TypeArguments="ui:UiElement" Name="domFiscalElecButton" />
@@ -63,60 +63,21 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  VE-Lector'" sap:VirtualizedContainerService.HintSize="434,1002" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="14c152cc679515fada7c6338c16abd18" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  VE-Lector'" sap:VirtualizedContainerService.HintSize="483.2,730.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="14c152cc679515fada7c6338c16abd18" Selector="&lt;html app='chrome.exe' title='Domicilio Fiscal Electrónico' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,856" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,543.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="To be on the right page.&#xA;" DisplayName="Find Element - Domicilio Fiscal Electronico" FoundElement="[domFiscalElecButton]" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Mis Comunicaciones button" FoundElement="[misComunicacionesButton]" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
               <ui:WaitUiElementAppear.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e7fc9cf3-5370-4394-a488-bc516f79c3a5" InformativeScreenshot="f739e6ec13dd86239e6bee665abca1c0" Selector="&lt;webctrl innertext='Domicilio Fiscal Electrónico' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:WaitUiElementAppear.Target>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:WaitUiElementAppear>
-            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Domicilio Fiscal Electronico button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[domFiscalElecButton]" Id="128f3953-492d-48b0-a2f1-38c3bafb6c2b" InformativeScreenshot="f739e6ec13dd86239e6bee665abca1c0">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Mis Comunicaciones button" FoundElement="[misComunicacionesButton]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
-              <ui:WaitUiElementAppear.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81ddb860-27ff-4c31-a173-4856496856f2" InformativeScreenshot="b9b07a2e23b4de7b3685410e8788ae95" Selector="&lt;webctrl innertext='Mis comunicaciones*' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81ddb860-27ff-4c31-a173-4856496856f2" InformativeScreenshot="b9b07a2e23b4de7b3685410e8788ae95" Selector="&lt;html app='chrome.exe' title='Domicilio Fiscal Electrónico' /&gt;&lt;webctrl aria-role='tab' aria-posinset='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -126,7 +87,7 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Go to Mis Comunicaciones&#xA;" ClickType="CLICK_SINGLE" DisplayName="Click - Mis Comunicaciones button" sap:VirtualizedContainerService.HintSize="333.6,151.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Go to Mis Comunicaciones&#xA;" ClickType="CLICK_SINGLE" DisplayName="Click - Mis Comunicaciones button" sap:VirtualizedContainerService.HintSize="387.2,151.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -153,7 +114,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;AFIP.DFE. En pantalla Mis comunicaciones&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;AFIP.DFE. En pantalla Mis comunicaciones&quot;]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

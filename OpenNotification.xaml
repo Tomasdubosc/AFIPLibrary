@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CountNotifications" this:CountNotifications.in_notificationIndex="5" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CountNotifications" this:CountNotifications.in_notificationIndex="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Indice de la notificación que se quiere abrir." Name="in_notificationIndex" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>871,1829</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1219.2,1865.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CountNotifications_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -72,35 +72,42 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Abre la notificación deseada." DisplayName="OpenNotification" sap:VirtualizedContainerService.HintSize="879,1664" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Abre la notificación deseada." DisplayName="OpenNotification" sap:VirtualizedContainerService.HintSize="1229.6,1800.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'VE-Lector'" sap:VirtualizedContainerService.HintSize="837,1541" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="16002623db3ae628f2191954fe6eb9eb" Selector="&lt;html app='chrome.exe' title='VE-Lector' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'VE-Lector'" sap:VirtualizedContainerService.HintSize="1167.2,1657.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="16002623db3ae628f2191954fe6eb9eb" Selector="&lt;html app='chrome.exe' title='Domicilio Fiscal Electrónico' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="803,1395" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1133.6,1510.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="1" Name="loopIndex" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="notificationsChilds" />
               <Variable x:TypeArguments="ui:UiElement" Name="child" />
+              <Variable x:TypeArguments="x:Int32" Name="notificationIndexplus">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" />
+                </Variable.Default>
+              </Variable>
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FindChildren Children="[notificationsChilds]" DisplayName="Find Children Notifications" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="761,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+            <ui:FindChildren Children="[notificationsChilds]" DisplayName="Find Children Notifications" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="1071.2,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ee1595c-0ac3-492b-8e75-5a7b30d735db" InformativeScreenshot="80c23c208897df20e97cf13b0daa5a24" Selector="&lt;webctrl aria-role='rowgroup' parentid='*body-grid-container' tag='DIV' idx='2' /&gt;&lt;webctrl parentid='*body-grid-container' tag='DIV' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ee1595c-0ac3-492b-8e75-5a7b30d735db" InformativeScreenshot="80c23c208897df20e97cf13b0daa5a24" Selector="&lt;webctrl tag='tbody' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -110,45 +117,41 @@
                 </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <If Condition="[in_notificationIndex &gt; notificationsChilds.Count() OR in_notificationIndex&lt;1]" sap:VirtualizedContainerService.HintSize="761,236" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[in_notificationIndex &gt; notificationsChilds.Count() OR in_notificationIndex&lt;1]" sap:VirtualizedContainerService.HintSize="1071.2,248.8" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Throw Exception="[new ApplicationException(&quot;Open Notification: El número de notificación debe ser un valor mayor a cero y menor al máximo número de notificaciones disponibles.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                <Throw Exception="[new ApplicationException(&quot;Open Notification: El número de notificación debe ser un valor mayor a cero y menor al máximo número de notificaciones disponibles.&quot;)]" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Then>
             </If>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="761,881" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[notificationsChilds]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1071.2,962.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[notificationsChilds]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="child" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="725,748" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1036,828" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[loopIndex = in_notificationIndex]" sap:VirtualizedContainerService.HintSize="683,656" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[loopIndex = in_notificationIndex]" sap:VirtualizedContainerService.HintSize="973.6,716" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,499" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence sap:VirtualizedContainerService.HintSize="496,556.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Notification number: &quot; + in_notificationIndex.ToString]" />
-                          <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Set Focus" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="SetFocus_2">
-                            <ui:SetFocus.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[child]" Id="2cac63a8-e4d7-4ed2-97f1-69f28d7aad1a">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:SetFocus.Target>
-                          </ui:SetFocus>
-                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening Notification number: &quot; + in_notificationIndex.ToString]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[notificationIndexplus]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[in_notificationIndex+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:Click CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" ContinueOnError="False" sap:VirtualizedContainerService.HintSize="433.6,68.8" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -160,14 +163,14 @@
                               </ui:CursorPosition>
                             </ui:Click.CursorPosition>
                             <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[child]" Id="f6a9a3f9-20dc-49b3-b7f6-6e2bca8fee11" WaitForReady="COMPLETE">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f6a9a3f9-20dc-49b3-b7f6-6e2bca8fee11" Selector="[String.Format(&quot;&lt;webctrl tag='A' tableCol='3' tableRow='{0}' /&gt;&quot;, notificationIndexplus)]" WaitForReady="NONE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
                               </ui:Target>
                             </ui:Click.Target>
                           </ui:Click>
-                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[loopIndex]</OutArgument>
                             </Assign.To>
@@ -178,7 +181,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">[loopIndex]</OutArgument>
                           </Assign.To>
