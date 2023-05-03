@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CountNotifications" this:CountNotifications.in_searchedCUIT="1110" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CountNotifications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_searchedCUIT" Type="InArgument(x:String)" />
   </x:Members>
@@ -126,9 +126,9 @@
               </ui:Click.Target>
             </ui:Click>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="924,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Grilla con todos los representados disponible&quot;]" />
-            <ui:FindChildren Children="[notificationsChilds]" DisplayName="Find Children Notifications" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="924,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+            <ui:FindChildren Children="[notificationsChilds]" DisplayName="Find Children - Options" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="924,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ee1595c-0ac3-492b-8e75-5a7b30d735db" InformativeScreenshot="80c23c208897df20e97cf13b0daa5a24" Selector="&lt;webctrl tag='DIV' class='d-select form-group dropdown' innertext='*Selecciona tu representado*' /&gt;&lt;webctrl tag='DIV' class='dropdown-menu' /&gt;&lt;webctrl tag='DIV' class='d-select__dropdown-wrapper' parentclass='dropdown-menu' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ee1595c-0ac3-492b-8e75-5a7b30d735db" InformativeScreenshot="80c23c208897df20e97cf13b0daa5a24" Selector="&lt;webctrl tag='DIV' class='*d-select form-group dropdown*' innertext='*Selecciona tu representado*' /&gt;&lt;webctrl tag='DIV' class='*dropdown-menu*' /&gt;&lt;webctrl tag='DIV' class='*d-select__dropdown-wrapper*' parentclass='*dropdown-menu*' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
