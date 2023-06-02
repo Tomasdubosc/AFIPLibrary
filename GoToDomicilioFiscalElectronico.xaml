@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GoToDomicilioFiscalElectronico" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2832.8,4430.4" sap2010:WorkflowViewState.IdRef="GoToDomicilioFiscalElectronico_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GoToDomicilioFiscalElectronico" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2832.8,2944" sap2010:WorkflowViewState.IdRef="GoToDomicilioFiscalElectronico_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -60,7 +60,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Accede a la sección de Domicilio Fiscal Electronico independientemente de la versión del sistema AFIP que el usuario posea." DisplayName="GoToDomicilioFiscalElectronico" sap:VirtualizedContainerService.HintSize="2843.2,4365.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Accede a la sección de Domicilio Fiscal Electronico independientemente de la versión del sistema AFIP que el usuario posea." DisplayName="GoToDomicilioFiscalElectronico" sap:VirtualizedContainerService.HintSize="2843.2,2879.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="version1" />
       <Variable x:TypeArguments="x:Boolean" Name="version2" />
@@ -121,7 +121,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:UiElementExists DisplayName="Element Exists 'SPAN' - Domicilio Fiscal Electronico" Exists="[alreadyOnDFE]" sap:VirtualizedContainerService.HintSize="2116,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17259d54-569f-469f-94f1-0722559edacf" InformativeScreenshot="776d0ec3619aca362d98e29205d10617" Selector="&lt;html app='chrome.exe' title='Domicilio Fiscal Electrónico' /&gt;&lt;webctrl tag='H1' innertext='Domicilio Fiscal Electrónico' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17259d54-569f-469f-94f1-0722559edacf" InformativeScreenshot="776d0ec3619aca362d98e29205d10617" Selector="&lt;html app='chrome.exe' title='Domicilio Fiscal Electr*nico' /&gt;&lt;webctrl tag='H1' innertext='Domicilio Fiscal Electr*nico' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -241,7 +241,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Switch x:TypeArguments="x:Int32" DisplayName="Go DFE in current AFIP version" Expression="[version]" sap:VirtualizedContainerService.HintSize="2780.8,1801.6" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:Int32" DisplayName="Go DFE in current AFIP version" Expression="[version]" sap:VirtualizedContainerService.HintSize="2780.8,315.2" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
         <Throw Exception="[new SystemException(&quot;AFIP. Go to DFE. Not found DFE Version on current page&quot;)]" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="Throw_1" />
       </Switch.Default>
